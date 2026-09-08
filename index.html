@@ -1,0 +1,948 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xiaocheng Li | Personal Homepage</title>
+
+    <meta name="description"
+          content="Xiaocheng Li - Researcher and Developer. Personal academic homepage.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            color: #24292f;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 64px;
+
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #eaecef;
+
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+
+            height: 64px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #24292f;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #57606a;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        /* Main */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 24px 60px;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 520px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #1f2328;
+        }
+
+        .hero-text h2 {
+            font-size: 22px;
+            font-weight: 400;
+            color: #57606a;
+            margin-bottom: 24px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            font-size: 17px;
+            color: #57606a;
+        }
+
+        .highlight {
+            color: #0969da;
+            font-weight: 600;
+        }
+
+        /* Profile */
+
+        .profile {
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0969da,
+                    #8250df
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 70px;
+            font-weight: 700;
+
+            flex-shrink: 0;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            border: 1px solid #d0d7de;
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            text-decoration: none;
+            background: #f6f8fa;
+        }
+
+        .button.primary {
+            color: white;
+            background: #0969da;
+            border-color: #0969da;
+        }
+
+        .button.primary:hover {
+            background: #0757b8;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 80px 0;
+
+            border-top: 1px solid #eaecef;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #1f2328;
+        }
+
+        section h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        /* About */
+
+        .about-text {
+            max-width: 850px;
+            font-size: 16px;
+            color: #57606a;
+        }
+
+        /* Research */
+
+        .research-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .research-card {
+            padding: 24px;
+
+            border: 1px solid #d8dee4;
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            transition: 0.2s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .research-card p {
+            color: #57606a;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            margin-top: 14px;
+            margin-right: 5px;
+
+            padding: 3px 9px;
+
+            border-radius: 20px;
+
+            background: #ddf4ff;
+            color: #0969da;
+
+            font-size: 12px;
+        }
+
+        /* Publications */
+
+        .publication {
+            padding: 22px 0;
+
+            border-bottom: 1px solid #eaecef;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .publication-authors {
+            color: #57606a;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .publication-venue {
+            color: #8250df;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Projects */
+
+        .project {
+            margin-bottom: 30px;
+
+            padding: 24px;
+
+            border: 1px solid #d8dee4;
+            border-radius: 10px;
+        }
+
+        .project p {
+            color: #57606a;
+            margin: 10px 0;
+        }
+
+        /* Education */
+
+        .timeline {
+            border-left: 2px solid #d8dee4;
+
+            padding-left: 25px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -32px;
+            top: 8px;
+
+            width: 12px;
+            height: 12px;
+
+            background: #0969da;
+
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: #8250df;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Contact */
+
+        .contact {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 24px;
+
+            border: 1px solid #d8dee4;
+            border-radius: 10px;
+        }
+
+        .contact-card span {
+            display: block;
+
+            color: #57606a;
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-card strong {
+            font-size: 15px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #eaecef;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            color: #6e7781;
+
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                justify-content: center;
+            }
+
+            .hero-text p {
+                margin: auto;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .profile {
+                width: 170px;
+                height: 170px;
+
+                font-size: 55px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">
+            Xiaocheng Li
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#research">Research</a>
+            </li>
+
+            <li>
+                <a href="#publications">Publications</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+<main>
+
+    <!-- Hero -->
+
+    <section class="hero" style="border-top: none;">
+
+        <div class="hero-text">
+
+            <h1>
+                Xiaocheng Li
+            </h1>
+
+            <h2>
+                Researcher · AI Enthusiast · Developer
+            </h2>
+
+            <p>
+                I am interested in
+                <span class="highlight">
+                    Artificial Intelligence
+                </span>,
+                Large Language Models,
+                Parameter-Efficient Fine-Tuning,
+                and intelligent systems.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="button primary"
+                    href="mailto:lixc@mails.neu.edu.cn">
+                    Email Me
+                </a>
+
+                <!-- 修改成你的 GitHub 地址 -->
+                <a
+                    class="button"
+                    href="https://github.com/"
+                    target="_blank">
+                    GitHub
+                </a>
+
+                <a
+                    class="button"
+                    href="#publications">
+                    Publications
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 如果以后有个人照片，可以把这里换成 img -->
+
+        <div class="profile">
+            XL
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>
+            About Me
+        </h2>
+
+        <div class="about-text">
+
+            <p>
+                Hello! I am <strong>Xiaocheng Li</strong>.
+            </p>
+
+            <br>
+
+            <p>
+                My research interests focus on
+                Artificial Intelligence and
+                Machine Learning. I am particularly
+                interested in Large Language Models,
+                Parameter-Efficient Fine-Tuning (PEFT),
+                and intelligent research systems.
+            </p>
+
+            <br>
+
+            <p>
+                I also enjoy building practical software
+                systems and exploring the intersection
+                between AI research and engineering.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Research -->
+
+    <section id="research">
+
+        <h2>
+            Research Interests
+        </h2>
+
+        <div class="research-grid">
+
+            <div class="research-card">
+
+                <h3>
+                    Large Language Models
+                </h3>
+
+                <p>
+                    Research on LLM architectures,
+                    training, adaptation and
+                    intelligent applications.
+                </p>
+
+                <span class="tag">
+                    LLM
+                </span>
+
+                <span class="tag">
+                    NLP
+                </span>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>
+                    Parameter-Efficient Fine-Tuning
+                </h3>
+
+                <p>
+                    Exploring LoRA and other
+                    parameter-efficient methods
+                    for adapting large language models.
+                </p>
+
+                <span class="tag">
+                    LoRA
+                </span>
+
+                <span class="tag">
+                    PEFT
+                </span>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <h3>
+                    Intelligent Systems
+                </h3>
+
+                <p>
+                    Designing AI-powered systems
+                    that combine retrieval,
+                    reasoning and autonomous agents.
+                </p>
+
+                <span class="tag">
+                    RAG
+                </span>
+
+                <span class="tag">
+                    Agent
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Publications -->
+
+    <section id="publications">
+
+        <h2>
+            Publications
+        </h2>
+
+
+        <!-- 这里替换成你的真实论文 -->
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Your Paper Title
+            </div>
+
+            <div class="publication-authors">
+                Xiaocheng Li, Co-author 1, Co-author 2
+            </div>
+
+            <div class="publication-venue">
+                Conference / Journal, 2026
+            </div>
+
+            <br>
+
+            <a href="#">
+                Paper
+            </a>
+
+            &nbsp;&nbsp;
+
+            <a href="#">
+                Code
+            </a>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Another Research Paper
+            </div>
+
+            <div class="publication-authors">
+                Xiaocheng Li, Co-author 1
+            </div>
+
+            <div class="publication-venue">
+                Conference / Journal, 2026
+            </div>
+
+            <br>
+
+            <a href="#">
+                Paper
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2>
+            Projects
+        </h2>
+
+
+        <div class="project">
+
+            <h3>
+                晨汰科研助手 · Research Assistant
+            </h3>
+
+            <p>
+                An intelligent research assistant system
+                designed to support literature search,
+                research project management,
+                experiment planning and paper writing.
+            </p>
+
+            <span class="tag">
+                Python
+            </span>
+
+            <span class="tag">
+                FastAPI
+            </span>
+
+            <span class="tag">
+                LLM
+            </span>
+
+            <span class="tag">
+                RAG
+            </span>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>
+                Intelligent RAG System
+            </h3>
+
+            <p>
+                A multimodal retrieval-augmented generation
+                system supporting documents, images and
+                structured data.
+            </p>
+
+            <span class="tag">
+                RAG
+            </span>
+
+            <span class="tag">
+                Vector Database
+            </span>
+
+            <span class="tag">
+                Multimodal
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <h2>
+            Education
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2021 – Present
+                </div>
+
+                <h3>
+                    Northeastern University
+                </h3>
+
+                <p>
+                    Undergraduate Student
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    Research
+                </div>
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+                <p>
+                    Research interests include
+                    Large Language Models,
+                    PEFT, RAG and AI systems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2>
+            Contact
+        </h2>
+
+        <div class="contact">
+
+            <div class="contact-card">
+
+                <span>
+                    Email
+                </span>
+
+                <strong>
+                    <a href="mailto:lixc@mails.neu.edu.cn">
+                        lixc@mails.neu.edu.cn
+                    </a>
+                </strong>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <span>
+                    GitHub
+                </span>
+
+                <strong>
+                    <a
+                        href="https://github.com/"
+                        target="_blank">
+                        GitHub
+                    </a>
+                </strong>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <span>
+                    Location
+                </span>
+
+                <strong>
+                    China
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 Xiaocheng Li.
+    Built with HTML & CSS.
+
+</footer>
+
+
+</body>
+</html>
+```
